@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- task1 -->
+    <p>1. Даны 3 инпута и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в четвертый инпут.</p>
+    <input type="number" class="user-input">
+    <input type="number" class="user-input">
+    <input type="number" class="user-input">
+    <button type="button" id="btn-task-one">Get summary</button>
+    <input type="number" id="result-task-one">
+
+    <!-- task2 -->
+    <p>2. Даны N инпутов с классом .num и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац с id="result".</p>
+        <input type="number" class="num">
+        <input type="number" class="num">
+        <button type="button" id="btn-task-two">Get result</button>
+        <p id="result-task-two"></p>
+
+    <!-- task3 -->
+    <p>3. Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа.</p>
+    <input type="number" id="input-task-3">
+    <p>Сумма цифр в инпуте = <span id="result-task-three"></span></p>
+
+    <!-- task4 -->
+    <p>4. Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество).</p>
+    <input type="text" id="input-task-four">
+    <p>Среднее арифметическое цифр = <span id="result-task-four"></span></p>
+    <div class="container"></div>
+    <style>
+        .container {
+            color: red;
+        }
+    </style>
+
+    <!-- task5 -->
+    <p>5. Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты.</p>
+    <input type="text" id="fullname">
+    <div class="wrap">
+        <input type="text" id="surname">
+        <input type="text" id="name">
+        <input type="text" id="patronymic">
+    </div>
+    <style>
+        .wrap {
+            margin-top: 20px;
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>
