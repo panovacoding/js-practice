@@ -81,3 +81,18 @@ fullname.addEventListener('blur', () => {
         patronymic.value = splittedNameArr[2];
     }
 })
+
+
+//task6
+let inputTaskSix = document.getElementById('input-task-six');
+
+inputTaskSix.addEventListener('blur', () => {
+    let splittedValue = (inputTaskSix.value).split(' ');
+    inputTaskSix.value = '';
+    for (let i = 0; i < splittedValue.length; i++) {
+        let capitalLetter = (splittedValue[i])[0].toUpperCase();
+        let slicedString = splittedValue[i].slice(1);
+        splittedValue[i] = capitalLetter + slicedString;
+        inputTaskSix.value += splittedValue[i] + ' ';
+    }
+})
