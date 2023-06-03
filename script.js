@@ -23,7 +23,7 @@ btnTaskTwo.addEventListener('click', () => {
         summary += +input.value;
     })
     resultTaskTwo.textContent = summary;
-})
+});
 
 
 //task 3
@@ -35,7 +35,7 @@ inputTaskThree.onblur = () => {
     let arrayValue = stringValue.map(Number);
     let sum = arrayValue.reduce((prev, current) => prev + current, 0);
     resultTaskThree.textContent = sum;
-}
+};
 
 
 // task4
@@ -55,11 +55,11 @@ inputTaskFour.onblur = () => {
         let average = sum / arr.length;
         resultTaskFour.textContent = average;
     }
-}
+};
 
 inputTaskFour.addEventListener('focus', () => {
     container.textContent = '';
-})
+});
 
 
 //task5
@@ -80,7 +80,7 @@ fullname.addEventListener('blur', () => {
         name.value = splittedNameArr[1];
         patronymic.value = splittedNameArr[2];
     }
-})
+});
 
 
 //task6
@@ -95,4 +95,15 @@ inputTaskSix.addEventListener('blur', () => {
         splittedValue[i] = capitalLetter + slicedString;
         inputTaskSix.value += splittedValue[i] + ' ';
     }
+});
+
+//task7
+
+let inputTaskSeven = document.getElementById('input-task-seven');
+let resultTaskSeven = document.getElementById('result-task-seven');
+
+inputTaskSeven.addEventListener('blur', () => {
+    let splittedValue = (inputTaskSeven.value).split(' ');
+    let splittedValueLength = splittedValue.length;
+    resultTaskSeven.innerText = splittedValueLength;
 })
