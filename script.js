@@ -106,4 +106,20 @@ inputTaskSeven.addEventListener('blur', () => {
     let splittedValue = (inputTaskSeven.value).split(' ');
     let splittedValueLength = splittedValue.length;
     resultTaskSeven.innerText = splittedValueLength;
+});
+
+// task8
+
+let inputTaskEight = document.getElementById('input-task-eight');
+let resultTaskEight = document.getElementById('result-task-eight');
+
+inputTaskEight.addEventListener('blur', () => {
+    let splittedValue = (inputTaskEight.value).split(' ');
+
+    function findLongestElement () {
+        splittedValue.sort((a, b) => a.length - b.length);   
+        return splittedValue[splittedValue.length - 1].length;
+    }
+    
+    resultTaskEight.innerText = findLongestElement();
 })
