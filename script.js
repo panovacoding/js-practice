@@ -123,3 +123,15 @@ inputTaskEight.addEventListener('blur', () => {
     
     resultTaskEight.innerText = findLongestElement();
 })
+
+//task 9
+
+let inputTaskNine = document.getElementById('input-task-nine');
+
+inputTaskNine.addEventListener('blur', () => {
+    let splittedValue = (inputTaskNine.value).split('.');
+    let newArr = [];
+    newArr.push(splittedValue[2], splittedValue[1], splittedValue[0]);
+    let newValue = newArr.join('-');
+    console.log(newValue);
+})
