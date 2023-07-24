@@ -122,7 +122,7 @@ inputTaskEight.addEventListener('blur', () => {
     }
     
     resultTaskEight.innerText = findLongestElement();
-})
+});
 
 //task 9
 
@@ -133,4 +133,22 @@ inputTaskNine.addEventListener('blur', () => {
     splittedValue.reverse();
     let newValue = splittedValue.join('-');
     inputTaskNine.value = newValue;
+});
+
+//task 10
+
+let inputTaskTen = document.getElementById('input-task-ten');
+let buttonTaskTen = document.getElementById('button-task-ten');
+let resultTaskTen = document.getElementById('result-task-ten');
+
+buttonTaskTen.addEventListener('click', () => {
+    resultTaskTen.value = '';
+    resultTaskTen.removeAttribute('style', 'color:red');
+    let currentYear = new Date().getFullYear();
+    if(inputTaskTen.value > currentYear) {
+        resultTaskTen.setAttribute('style', 'color:red');
+        resultTaskTen.innerText = 'Пожалуйста, введите корректный год';
+    } else {
+        resultTaskTen.innerText = currentYear - inputTaskTen.value;
+    }
 })
