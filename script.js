@@ -151,4 +151,18 @@ buttonTaskTen.addEventListener('click', () => {
     } else {
         resultTaskTen.innerText = currentYear - inputTaskTen.value;
     }
-})
+});
+
+//task11
+
+let inputTaskEleven = document.getElementById('input-task-eleven');
+let resultTaskEleven = document.getElementById('result-task-eleven');
+const weekdays = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+
+inputTaskEleven.addEventListener('blur', () => {
+    let splittedValue = (inputTaskEleven.value).split('.');
+    splittedValue.reverse();
+    let newValue = splittedValue.join('-');
+    let userDate = new Date(newValue);
+    resultTaskEleven.innerText = weekdays[userDate.getDay()];
+});
