@@ -166,3 +166,117 @@ inputTaskEleven.addEventListener('blur', () => {
     let userDate = new Date(newValue);
     resultTaskEleven.innerText = weekdays[userDate.getDay()];
 });
+
+//task 12
+
+const inputTaskTwelve = document.getElementById('input-task-twelve');
+const resultTaskTwevle = document.getElementById('result-task-twelve');
+const btnTaskTwelve = document.getElementById('btn-task-twevle');
+
+btnTaskTwelve.addEventListener('click', () => {
+    if(inputTaskTwelve.value) {
+        let inputValue = inputTaskTwelve.value;
+        let reversedValue = inputTaskTwelve.value.split('').reverse();
+
+        inputValue === reversedValue.join('') ? resultTaskTwevle.textContent = 'ДА' : resultTaskTwevle.textContent = 'НЕТ'
+    }
+})
+
+// task 13
+
+const inputTask13 = document.getElementById('input-task-13');
+const resultTask13 = document.getElementById('result-task-13');
+
+inputTask13.addEventListener('blur', () => {
+    if(inputTask13.value) {
+        let inputValue = inputTask13.value;
+        inputValue.includes('3') ? resultTask13.textContent = 'ДА' : resultTask13.textContent = 'НЕТ'
+    }
+})
+
+// task14
+
+const btnTask14 = document.getElementById('btn-task-14');
+const paragraphs = [...document.querySelectorAll('.task14-p')];
+
+btnTask14.addEventListener('click', () => {
+    for (let i = 0; i < paragraphs.length; i++) {
+        let result14 = paragraphs[i].querySelector('span');
+        console.log(result14)
+        result14.textContent = i + 1;
+    }
+})
+
+// task15
+const btnTask15 = document.getElementById('btn-task-15');
+const inputTask15 = document.getElementById('input-task-15');
+const paragraphs15 = [...document.querySelectorAll('.task15-p')];
+let paragraphs15Values = [];
+paragraphs15.forEach(paragraph => paragraphs15Values.push(paragraph.innerText));
+
+btnTask15.addEventListener('click', () => {
+    paragraphs15Values.sort((a, b) => a - b);
+    inputTask15.value = paragraphs15Values.join(', ')
+})
+
+// task16
+const links16 = [...document.querySelectorAll('.task16-link')];
+
+links16.forEach(link => {
+    let startSlice = link.innerText.indexOf('(');
+    let endSlice = link.innerText.indexOf(')');
+    let generatedLink = link.innerText.slice(startSlice +1, endSlice);
+    link.setAttribute('href', generatedLink);
+})
+
+// task17
+const links17 = [...document.querySelectorAll('.task17-link')];
+
+links17.forEach(link => {
+    let linkHref = link.getAttribute('href');
+    if(linkHref.startsWith('http://')) {
+        link.insertAdjacentText('beforeend', '→')
+    }
+})
+
+// task18
+
+const links18 = [...document.querySelectorAll('.task18-p')];
+
+links18.forEach(link => {
+    link.addEventListener('click', () => {
+        link.textContent = link.innerText ** 2;
+    })
+})
+
+// task19
+const img19 = [...document.querySelectorAll('.task19-img')];
+
+img19.forEach(img => {
+    img.addEventListener('click', () => {
+        img.style.transform ='scale(2)';
+        img.style.margin = '50px';
+    })
+})
+
+// task20
+
+const img20 = [...document.querySelectorAll('.task20-img')];
+
+img20.forEach(img => {
+    img.addEventListener('click', () => {
+        img.classList.toggle('scale-img')
+    })
+})
+
+// task21
+const img21 = [...document.querySelectorAll('.task21-img')];
+const result21 = document.getElementById('task21-big');
+
+img21.forEach(img => {
+    img.addEventListener('click', () => {
+        let imgPath = img.getAttribute('src');
+        result21.removeAttribute('hidden');
+        result21.setAttribute('src', imgPath)
+    })
+})

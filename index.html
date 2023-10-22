@@ -82,6 +82,81 @@
     <input type="text" id="input-task-eleven">
     <p>День недели = <span id="result-task-eleven"></span></p>
 
+    <!-- task12 -->
+    <p>12. Дан инпут. В него вводится слово. По нажатию на кнопку проверьте то, что это слово читается с начала и с конца одинаково (например, мадам).</p>
+    <input type="text" id="input-task-twelve">
+    <button type="button" id="btn-task-twevle">Узнать</button>
+    <p>Зеркально ли слово? - <span id="result-task-twelve"></span></p>
+
+    <!-- task13 -->
+    <p>13. Дан инпут. В него вводится число. Проверьте по вводу, что это число содержит внутри себя цифру 3</p>
+    <input type="text" id="input-task-13">
+    <p>Содержит цифру 3 - <span id="result-task-13"></span></p>
+
+    <!-- task14 -->
+    <p>14. Даны N абзацев и кнопка. По нажатию на кнопку запишите в конец каждого абзаца его порядковый номер.</p>
+    <p class="task14-p">Абзац № <span></span></p>
+    <p class="task14-p">Абзац № <span></span></p>
+    <p class="task14-p">Абзац № <span></span></p>
+    <p class="task14-p">Абзац № <span></span></p>
+    <p class="task14-p">Абзац № <span></span></p>
+    <button type="button" id="btn-task-14">Добавить порядковый номер</button>
+
+    <!-- task15 -->
+    <p>15. Даны N абзацев с числами. По нажатию на кнопку выведите эти числа в инпут через запятую в порядке возрастания.</p>
+    <p class="task15-p">8787</p>
+    <p class="task15-p">66</p>
+    <p class="task15-p">9879</p>
+    <p class="task15-p">2345</p>
+    <p class="task15-p">9898</p>
+    <button type="button" id="btn-task-15">Вывести числа</button>
+    <input type="text" id="input-task-15">
+
+    <!-- task16 -->
+    <p>16. Даны ссылки. По загрузке страницы добавьте в конец каждой ссылки ее href в круглых скобках.</p>
+    <a class="task16-link">Ссылка с href = (https://shchypanov.github.io/site/practiceJS/111)</a><br>
+    <a class="task16-link">Ссылка с href = (https://shchypanov.github.io/site/practiceJS/222)</a><br>
+    <a class="task16-link">Ссылка с href = (https://shchypanov.github.io/site/practiceJS/333)</a><br>
+
+    <!-- task17 -->
+    <p>17. Даны ссылки. По загрузке страницы, если ссылка начинается с http://, то добавьте ей в конец стрелку →</p>
+    <a href="http://0.0.0.111" class="task17-link">Ссылка с http://</a><br>
+    <a href="http://0.0.0.222" class="task17-link">Ссылка с http://</a><br>
+    <a href="https://shchypanov.github.io/site/practiceJS/333" class="task17-link">Ссылка НЕ с http://</a><br>
+
+    <!-- task18 -->
+    <p>18. Даны N абзацев с числами. По нажатию на любой абзац запишите в него квадрат числа, которое в нем находится.</p>
+    <p class="task18-p">2</p>
+    <p class="task18-p">3</p>
+    <p class="task18-p">4</p>
+
+    <!-- task19 -->
+    <p>19. Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза.</p>
+    <img src="https://shchypanov.github.io/site/practiceJS/img/1.png" alt="" class="task19-img">
+    <img src="https://shchypanov.github.io/site/practiceJS/img/2.png" alt="" class="task19-img">
+    <img src="https://shchypanov.github.io/site/practiceJS/img/3.png" alt="" class="task19-img">
+
+    <!-- task20 -->
+    <p>20. Даны картинки. По первому нажатию на любую картинку увеличьте ее в 2 раза. По второму нажатию - уменьшите обратно.</p>
+    <img src="https://shchypanov.github.io/site/practiceJS/img/1.png" alt="" class="task20-img">
+    <img src="https://shchypanov.github.io/site/practiceJS/img/2.png" alt="" class="task20-img">
+    <img src="https://shchypanov.github.io/site/practiceJS/img/3.png" alt="" class="task20-img">
+
+    <style>
+        .scale-img {
+            transform: scale(2);
+            margin: 50px;
+        }
+    </style>
+
+    <!-- task21 -->
+    <p>21. Даны N картинок размера 30px. По нажатию на картинку под ними эта картинка появляется размером в 50px.</p>
+    <img width="30" height="30" src="https://shchypanov.github.io/site/practiceJS/img/1.png" alt="" class="task21-img">
+    <img width="30" height="30" src="https://shchypanov.github.io/site/practiceJS/img/2.png" alt="" class="task21-img">
+    <img width="30" height="30" src="https://shchypanov.github.io/site/practiceJS/img/3.png" alt="" class="task21-img"><br>
+
+    <img width="50" height="50" src="" id="task21-big" hidden />
+
     <script src="script.js"></script>
 </body>
 </html>
