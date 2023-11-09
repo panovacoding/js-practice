@@ -180,7 +180,7 @@ btnTaskTwelve.addEventListener('click', () => {
 
         inputValue === reversedValue.join('') ? resultTaskTwevle.textContent = 'ДА' : resultTaskTwevle.textContent = 'НЕТ'
     }
-})
+});
 
 // task 13
 
@@ -192,7 +192,7 @@ inputTask13.addEventListener('blur', () => {
         let inputValue = inputTask13.value;
         inputValue.includes('3') ? resultTask13.textContent = 'ДА' : resultTask13.textContent = 'НЕТ'
     }
-})
+});
 
 // task14
 
@@ -205,7 +205,7 @@ btnTask14.addEventListener('click', () => {
         console.log(result14)
         result14.textContent = i + 1;
     }
-})
+});
 
 // task15
 const btnTask15 = document.getElementById('btn-task-15');
@@ -217,7 +217,7 @@ paragraphs15.forEach(paragraph => paragraphs15Values.push(paragraph.innerText));
 btnTask15.addEventListener('click', () => {
     paragraphs15Values.sort((a, b) => a - b);
     inputTask15.value = paragraphs15Values.join(', ')
-})
+});
 
 // task16
 const links16 = [...document.querySelectorAll('.task16-link')];
@@ -227,7 +227,7 @@ links16.forEach(link => {
     let endSlice = link.innerText.indexOf(')');
     let generatedLink = link.innerText.slice(startSlice +1, endSlice);
     link.setAttribute('href', generatedLink);
-})
+});
 
 // task17
 const links17 = [...document.querySelectorAll('.task17-link')];
@@ -237,7 +237,7 @@ links17.forEach(link => {
     if(linkHref.startsWith('http://')) {
         link.insertAdjacentText('beforeend', '→')
     }
-})
+});
 
 // task18
 
@@ -247,7 +247,7 @@ links18.forEach(link => {
     link.addEventListener('click', () => {
         link.textContent = link.innerText ** 2;
     })
-})
+});
 
 // task19
 const img19 = [...document.querySelectorAll('.task19-img')];
@@ -257,7 +257,7 @@ img19.forEach(img => {
         img.style.transform ='scale(2)';
         img.style.margin = '50px';
     })
-})
+});
 
 // task20
 
@@ -267,7 +267,7 @@ img20.forEach(img => {
     img.addEventListener('click', () => {
         img.classList.toggle('scale-img')
     })
-})
+});
 
 // task21
 const img21 = [...document.querySelectorAll('.task21-img')];
@@ -279,4 +279,148 @@ img21.forEach(img => {
         result21.removeAttribute('hidden');
         result21.setAttribute('src', imgPath)
     })
-})
+});
+
+// task22
+const input22 = document.getElementById('task22-input');
+const increaseInput22 = document.getElementById('task22-increase');
+const decreaseInput22 = document.getElementById('task22-decrease');
+
+increaseInput22.addEventListener('click', () => {
+    input22.value = +input22.value + 1;
+});
+
+decreaseInput22.addEventListener('click', () => {
+    if (+input22.value <= 0) return;
+    input22.value = +input22.value - 1;
+});
+
+// task23
+const input23 = document.getElementById('task23-input');
+
+input23.addEventListener('blur', () => {
+    if(input23.value >= 1 && input23.value <= 100) {
+        input23.style.border = '2px solid green';
+        return;
+    }
+    input23.style.border = '2px solid red';
+});
+
+// task24
+const input24 = document.getElementById('task24-input');
+document.addEventListener('mouseup', () => {
+    input24.value = document.getSelection();
+});
+
+// task25
+const task25parent = document.getElementById('task25-parent');
+const paragraphs25 = [...task25parent.querySelectorAll('p')];
+const task25btn = document.getElementById('task25-btn');
+
+let task25values = [];
+
+task25btn.addEventListener('click', () => {
+    paragraphs25.forEach(paragraph => {
+        task25values.push(Number(paragraph.textContent));
+        console.log(+paragraph.textContent)
+        task25values.sort((a, b) => a - b);
+
+        if(Number(paragraph.textContent) === task25values[task25values.length - 1]) {
+            paragraph.style.color = 'red';
+        }
+    });
+    
+});
+
+// task26
+const task26parent = document.getElementById('task26-parent');
+const paragraphs26 = [...task26parent.querySelectorAll('p')];
+const task26result = document.getElementById('task26-result');
+
+let counter26 = 0;
+
+paragraphs26.forEach(paragraph => {
+    paragraph.addEventListener('click', () => {
+        counter26++;
+        task26result.value = counter26;
+    })
+});
+
+// task27
+const task27input = document.getElementById('task27-input');
+setInterval(() => {
+    task27input.value = Number(task27input.value ** 2);
+}, 1000);
+
+// task28
+const task28input = document.getElementById('task28-input');
+const task28btn = document.getElementById('task28-btn');
+
+const symbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+let randomArray = [];
+
+task28btn.addEventListener('click', () => {
+    while (randomArray.length < 8) {
+        let randomSymbol = symbols[Math.floor(Math.random() * (symbols.length - 1))];
+        randomArray.push(randomSymbol);
+    }
+    
+    let randomString = randomArray.join('');
+
+    task28input.value = randomString;
+    randomArray = [];
+});
+
+// task29
+const task29lenght = document.getElementById('task29-length');
+const task29btn = document.getElementById('task29-btn');
+const task29result = document.getElementById('task29-result');
+
+const symbols29 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+let randomArray29 = [];
+
+task29btn.addEventListener('click', () => {
+    if(!task29lenght.value) return;
+
+    let maxLenght = task29lenght.value;
+
+    while(randomArray29.length < maxLenght) {
+        let randomSymbol = symbols29[Math.floor(Math.random() * (symbols29.length - 1))];
+        randomArray29.push(randomSymbol);
+    }
+
+    let randomString = randomArray29.join('');
+
+    task29result.value = randomString;
+
+    randomArray29 = [];
+});
+
+// task30
+const task30btn = document.getElementById('task30-btn');
+const task30lenght = document.getElementById('task30-length');
+const task30symbols = document.getElementById('task30-symbols');
+const task30result = document.getElementById('task30-result');
+
+let randomArray30 = [];
+
+task30btn.addEventListener('click', () => {
+    if(!task30lenght.value || !task30symbols.value) return;
+
+    let symbols = task30symbols.value;
+
+    if (task30lenght.value <= 0) return;
+
+    let maxLenght = task30lenght.value;
+
+    while(randomArray30.length < maxLenght) {
+        let randomSymbol = symbols[Math.floor(Math.random() * (symbols.length - 1))];
+        randomArray30.push(randomSymbol);
+    }
+
+    let randomString = randomArray30.join('');
+
+    task30result.value = randomString;
+
+    randomArray30 = [];
+});
