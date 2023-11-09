@@ -116,11 +116,11 @@ let resultTaskEight = document.getElementById('result-task-eight');
 inputTaskEight.addEventListener('blur', () => {
     let splittedValue = (inputTaskEight.value).split(' ');
 
-    function findLongestElement () {
-        splittedValue.sort((a, b) => a.length - b.length);   
+    function findLongestElement() {
+        splittedValue.sort((a, b) => a.length - b.length);
         return splittedValue[splittedValue.length - 1].length;
     }
-    
+
     resultTaskEight.innerText = findLongestElement();
 });
 
@@ -145,7 +145,7 @@ buttonTaskTen.addEventListener('click', () => {
     resultTaskTen.value = '';
     resultTaskTen.removeAttribute('style', 'color:red');
     let currentYear = new Date().getFullYear();
-    if(inputTaskTen.value > currentYear) {
+    if (inputTaskTen.value > currentYear) {
         resultTaskTen.setAttribute('style', 'color:red');
         resultTaskTen.innerText = 'Пожалуйста, введите корректный год';
     } else {
@@ -174,7 +174,7 @@ const resultTaskTwevle = document.getElementById('result-task-twelve');
 const btnTaskTwelve = document.getElementById('btn-task-twevle');
 
 btnTaskTwelve.addEventListener('click', () => {
-    if(inputTaskTwelve.value) {
+    if (inputTaskTwelve.value) {
         let inputValue = inputTaskTwelve.value;
         let reversedValue = inputTaskTwelve.value.split('').reverse();
 
@@ -188,7 +188,7 @@ const inputTask13 = document.getElementById('input-task-13');
 const resultTask13 = document.getElementById('result-task-13');
 
 inputTask13.addEventListener('blur', () => {
-    if(inputTask13.value) {
+    if (inputTask13.value) {
         let inputValue = inputTask13.value;
         inputValue.includes('3') ? resultTask13.textContent = 'ДА' : resultTask13.textContent = 'НЕТ'
     }
@@ -225,7 +225,7 @@ const links16 = [...document.querySelectorAll('.task16-link')];
 links16.forEach(link => {
     let startSlice = link.innerText.indexOf('(');
     let endSlice = link.innerText.indexOf(')');
-    let generatedLink = link.innerText.slice(startSlice +1, endSlice);
+    let generatedLink = link.innerText.slice(startSlice + 1, endSlice);
     link.setAttribute('href', generatedLink);
 });
 
@@ -234,7 +234,7 @@ const links17 = [...document.querySelectorAll('.task17-link')];
 
 links17.forEach(link => {
     let linkHref = link.getAttribute('href');
-    if(linkHref.startsWith('http://')) {
+    if (linkHref.startsWith('http://')) {
         link.insertAdjacentText('beforeend', '→')
     }
 });
@@ -254,7 +254,7 @@ const img19 = [...document.querySelectorAll('.task19-img')];
 
 img19.forEach(img => {
     img.addEventListener('click', () => {
-        img.style.transform ='scale(2)';
+        img.style.transform = 'scale(2)';
         img.style.margin = '50px';
     })
 });
@@ -299,7 +299,7 @@ decreaseInput22.addEventListener('click', () => {
 const input23 = document.getElementById('task23-input');
 
 input23.addEventListener('blur', () => {
-    if(input23.value >= 1 && input23.value <= 100) {
+    if (input23.value >= 1 && input23.value <= 100) {
         input23.style.border = '2px solid green';
         return;
     }
@@ -325,11 +325,11 @@ task25btn.addEventListener('click', () => {
         console.log(+paragraph.textContent)
         task25values.sort((a, b) => a - b);
 
-        if(Number(paragraph.textContent) === task25values[task25values.length - 1]) {
+        if (Number(paragraph.textContent) === task25values[task25values.length - 1]) {
             paragraph.style.color = 'red';
         }
     });
-    
+
 });
 
 // task26
@@ -364,7 +364,7 @@ task28btn.addEventListener('click', () => {
         let randomSymbol = symbols[Math.floor(Math.random() * (symbols.length - 1))];
         randomArray.push(randomSymbol);
     }
-    
+
     let randomString = randomArray.join('');
 
     task28input.value = randomString;
@@ -380,11 +380,11 @@ const symbols29 = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345678
 let randomArray29 = [];
 
 task29btn.addEventListener('click', () => {
-    if(!task29lenght.value) return;
+    if (!task29lenght.value) return;
 
     let maxLenght = task29lenght.value;
 
-    while(randomArray29.length < maxLenght) {
+    while (randomArray29.length < maxLenght) {
         let randomSymbol = symbols29[Math.floor(Math.random() * (symbols29.length - 1))];
         randomArray29.push(randomSymbol);
     }
@@ -405,7 +405,7 @@ const task30result = document.getElementById('task30-result');
 let randomArray30 = [];
 
 task30btn.addEventListener('click', () => {
-    if(!task30lenght.value || !task30symbols.value) return;
+    if (!task30lenght.value || !task30symbols.value) return;
 
     let symbols = task30symbols.value;
 
@@ -413,7 +413,7 @@ task30btn.addEventListener('click', () => {
 
     let maxLenght = task30lenght.value;
 
-    while(randomArray30.length < maxLenght) {
+    while (randomArray30.length < maxLenght) {
         let randomSymbol = symbols[Math.floor(Math.random() * (symbols.length - 1))];
         randomArray30.push(randomSymbol);
     }
@@ -424,3 +424,145 @@ task30btn.addEventListener('click', () => {
 
     randomArray30 = [];
 });
+
+// task31
+const task31p = document.getElementById('task31');
+
+setInterval(() => {
+    task31p.classList.toggle('green-text');
+}, 1000);
+
+// task32
+const task32input = document.getElementById('task32-input');
+const task32result = document.getElementById('task32-result');
+
+task32input.addEventListener('blur', () => {
+    let inputValue = task32input.value;
+
+    const decreaseNumber = setInterval(() => {
+        task32result.textContent = inputValue--;
+        if (+task32result.textContent === 0) clearInterval(decreaseNumber);
+    }, 1000);
+
+});
+
+// task33
+const task33p = document.getElementById('task33');
+const task33colors = [
+    'red',
+    'green',
+    'blue',
+    'purple',
+    'gray',
+];
+let i = 0;
+
+setInterval(() => {
+    task33p.style.color = task33colors[i];
+    i++;
+    if(i >= task33colors.length) i = 0;
+}, 1000);
+
+// task34
+const task34link = document.getElementById('task34-link');
+const task34result = document.getElementById('task34-result');
+const strings = [
+    'один',
+    'два',
+    'три',
+    'четыре',
+    'пять',
+];
+
+task34result.textContent = strings[0];
+
+task34link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let currentValue = task34result.textContent;
+
+    console.log(currentValue);
+    let currentValueIndex = strings.findIndex((el) => el === currentValue);
+
+    if(currentValueIndex === (strings.length - 1)) {
+        task34result.textContent = strings[0];
+        return;
+    };
+
+    task34result.textContent = strings[currentValueIndex + 1];
+});
+
+// task35
+const firstInput = document.getElementById('task35-first');
+const secondInput = document.getElementById('task35-second');
+const thirdInput = document.getElementById('task35-third');
+
+let count = 1;
+
+setTimeout(() => {
+    firstInput.value = count;
+
+    setInterval(() => {
+        count++;
+        firstInput.value = count;
+    }, 3000);
+
+}, 1000);
+
+setTimeout(() => {
+    count++;
+    secondInput.value = count;
+
+    setInterval(() => {
+        count++;
+        secondInput.value = count;
+    }, 3000);
+
+}, 2000);
+
+setTimeout(() => {
+    count++;
+    thirdInput.value = count;
+
+    setInterval(() => {
+        count++;
+        thirdInput.value = count;
+    }, 3000);
+
+}, 3000);
+
+// task36
+const task36link = document.getElementById('task36-link');
+const task36cb = document.getElementById('task36-cb');
+
+task36link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if(task36cb.checked) {
+        task36cb.checked = false;
+    } else {
+        task36cb.checked = true;
+    }
+});
+
+// task37
+const task37parent = document.getElementById('task37-parent');
+const checkboxes = [...task37parent.querySelectorAll('input[type="checkbox"]')];
+const task37btn = task37parent.querySelector('[id="task37-btn"]');
+
+task37btn.addEventListener('click', () => {
+    checkboxes.forEach(cb => {
+        cb.checked = true;
+    })
+});
+
+// task38
+const radioButtons = [...document.querySelectorAll('[name="programming-language"]')];
+const task38result = document.getElementById('task38-result');
+radioButtons.forEach(radio => {
+    radio.addEventListener('change', () => {
+        if(radio.checked) {
+            task38result.textContent = radio.id.toUpperCase();
+        }
+    })
+})

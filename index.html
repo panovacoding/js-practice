@@ -215,6 +215,63 @@
     <button id="task30-btn">Сгенерировать</button><br><br>
     <input type="text" id="task30-result">
 
+    <!-- task31 -->
+    <p>31. Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с красного на зеленый и наоборот.</p>
+    <p id="task31" class="red-text">Абзац изменяющий цвет каждую секунду</p>
+
+    <style>
+        .red-text {
+            color: red;
+        }
+
+        .green-text {
+            color: green;
+        }
+    </style>
+
+    <!-- task32 -->
+    <p>32. Дан инпут. В него вводится число. По потери фокуса сделайте так, чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного числа. Когда отсчет дойдет до нуля - он должен закончится.</p>
+    <input type="number" id="task32-input">
+    <div id="task32-result"></div>
+
+    <!-- task33 -->
+    <p>33. Дан абзац. Дан массив цветов ['red', 'green', 'blue']. Сделайте так, чтобы каждую секунду абзац менял свой цвет на определенное значение их массива: сначала 'red', потом 'green' и так далее. Как только цвета в массиве закончатся - все начнется сначала. Количество цветов в массиве может быть любым.</p>
+    <p id="task33">Абзац меняющий цвет, цвета берет из массива</p>
+
+    <!-- task34 -->
+    <p>34. Дан абзац. Дан массив строк ['один', 'два', 'три']. Под абзацем ссылка 'следующая строка'. По заходу на страницу в абзаце должен стоять нулевой элемент этого массива, а по нажатию на ссылку - вставлятся следующий элемент.</p>
+    <p id="task34-result"></p>
+    <a href="#" id="task34-link">Следующая строка</a>
+
+    <!-- task35 -->
+    <p>35. Даны инпуты с числами. Произвольное количетсво, пусть три. В первый инпут запишите 1, через секунду во второй инпут запишите 2, еще через секунду в третий инпут 3, потом через секунду в первый инпут запишите 4, во второй 5 и так далее до бесконечности.</p>
+    <input type="number" id="task35-first">
+    <input type="number" id="task35-second">
+    <input type="number" id="task35-third">
+
+    <!-- task36 -->
+    <p>36. Дана ссылка. Дан чекбокс. По нажатию на ссылку меняйте состояние чекбокса с отмеченного на неотмеченное и наоборот.</p>
+    <input type="checkbox" id="task36-cb">
+    <a href="#" id="task36-link">Изменить чекбокс</a>
+
+    <!-- task37 -->
+    <p>37. Даны чекбокс. Дана кнопка. По нажатию на кнопку сделайте все чекбоксы отмеченными.</p>
+    <div id="task37-parent">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <button id="task37-btn">Отметить все чекбоксы</button>
+    </div>
+
+    <!-- task38 -->
+    <p>38. Спросите у пользователя какой язык (html, css, js, php) он знает с помощью радио кнопочек. Выведите этот язык в абзац.</p>
+    <input type="radio" name="programming-language" id="html"><label for="html">HTML</label>
+    <input type="radio" name="programming-language" id="css"><label for="css">CSS</label>
+    <input type="radio" name="programming-language" id="js"><label for="js">JS</label>
+    <input type="radio" name="programming-language" id="php"><label for="php">PHP</label>
+    <p>Вы знаете: <span id="task38-result"></span></p>
+
     <script src="script.js"></script>
 </body>
 </html>
