@@ -565,4 +565,143 @@ radioButtons.forEach(radio => {
             task38result.textContent = radio.id.toUpperCase();
         }
     })
-})
+});
+
+// task39
+const cbLangs = [...document.querySelectorAll('[name="programming-language-cb"]')];
+const task39result = document.getElementById('task39-result');
+let selectedLanguages = [];
+cbLangs.forEach(cb => {
+    cb.addEventListener('change', () => {
+        let selectedLang = document.querySelector(`label[for=${cb.id}]`).textContent;
+        if(cb.checked) {
+            if(selectedLanguages.includes(selectedLang)) return;
+            selectedLanguages.push(selectedLang);
+        } else {
+            let itemToRemove = selectedLanguages.indexOf(selectedLang);
+            if(itemToRemove !== -1) {
+                selectedLanguages.splice(itemToRemove, 1);
+            }
+        }
+        task39result.textContent = selectedLanguages.join(', ');
+    });
+});
+
+// task40
+const cbTask40 = document.getElementById('task40-cb');
+const inputTask40 = document.getElementById('task40-input');
+
+cbTask40.addEventListener('change', () => {
+    if(cbTask40.checked) {
+        inputTask40.style.display = 'inline-block';
+        return;
+    }
+    inputTask40.style.display = 'none';
+});
+
+// task41
+const task41Parent = document.getElementById('task41-parent');
+const checkboxes41 = [...task41Parent.querySelectorAll('input[type="checkbox"]')];
+
+checkboxes41.forEach(cb => {
+    cb.addEventListener('change', () => {
+        let pToToggle = task41Parent.querySelector(`[id=${cb.id}-p]`);
+        if(cb.checked) {
+            pToToggle.style.opacity = "1";
+            return;
+        } 
+        pToToggle.style.opacity = "0";
+    })
+});
+
+// task42
+const task42input = document.getElementById('task42-input');
+const task42list = document.getElementById('task42-list');
+const task42items = [...task42list.children];
+
+task42input.addEventListener('change', () => {
+    let inputValue = Number(task42input.value);
+    if(inputValue > 0) {
+        task42items[inputValue - 1].style.color = 'red';
+    } else {
+        task42items.forEach(item => {
+            item.style.color = 'black';
+        })
+    }
+});
+
+// task43
+const task43p = document.getElementById('task43result');
+const checkboxes43 = [...document.querySelectorAll('input[name="text-decor"]')];
+
+checkboxes43.forEach(cb => {
+    cb.addEventListener('change', () => {
+        if(cb.checked) {
+            switch(cb.id) {
+                case 'line-through': task43p.style.textDecoration = cb.id;
+                case 'bold': task43p.style.fontWeight = cb.id;
+                case 'red': task43p.style.color = cb.id;
+            }
+        } else {
+            switch(cb.id) {
+                case 'line-through': task43p.style.textDecoration = 'none';
+                case 'bold': task43p.style.fontWeight = '400';
+                case 'red': task43p.style.color = 'black';
+            }
+        }
+    });
+});
+
+// task44
+const blocksToHide = [...document.querySelectorAll('.block-to-hide')];
+
+blocksToHide.forEach(block => {
+    let btn = block.querySelector('button');
+    btn.addEventListener('click', () => {
+        block.style.display = 'none';
+    })
+});
+
+// task45
+const task45input = document.getElementById('task45-input');
+const task45btn = document.getElementById('task45-btn');
+const task45list = document.getElementById('task45-list');
+
+task45btn.addEventListener('click', () => {
+    let arrayFromValue = task45input.value.split(',');
+    if(arrayFromValue.length > 0) {
+        arrayFromValue.forEach(value => {
+            task45list.insertAdjacentHTML('beforeend', `<li>${value}</li>`)
+        })
+        task45list.style.display = 'block';
+    }
+});
+
+// task46
+const task46input = document.getElementById('task46-input');
+const task46result = document.getElementById('task46-result');
+
+task46input.addEventListener('keydown', (e) => {
+    if(e.key !== "Enter") return;
+    let inputValue = task46input.value;
+    task46result.textContent += `${inputValue}, `;
+});
+
+// task47
+// const divsToCut = [...document.querySelectorAll('.div-to-cut')];
+// const task47btn = document.getElementById('task47-btn');
+
+// task47btn.addEventListener('click', () => {
+//     divsToCut.forEach(div => {
+//         let starterString = div.textContent;
+//         if(div.textContent.length <= 11) {
+//             div.textContent = starterString;
+//             task47btn.textContent = 'Обрезать'
+//         } else {
+//             let cuttedString = starterString.slice(0, 10);
+//             div.textContent = cuttedString + '...';
+//             task47btn.textContent = 'Показать'
+//         }
+//         console.log(starterString)
+//     })
+// });

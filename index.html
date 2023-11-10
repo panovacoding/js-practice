@@ -272,6 +272,86 @@
     <input type="radio" name="programming-language" id="php"><label for="php">PHP</label>
     <p>Вы знаете: <span id="task38-result"></span></p>
 
+    <!-- task39 -->
+    <p>39. Спросите у пользователя какие языки (html, css, js, php) он знает с помощью чекбоксов. Выбранные языки должны выводится в абзац ниже через запятую.</p>
+    <p>Какой язык программирования вы знаете?</p>
+    <input type="checkbox" name="programming-language-cb" id="html-cb"><label for="html-cb">HTML</label>
+    <input type="checkbox" name="programming-language-cb" id="css-cb"><label for="css-cb">CSS</label>
+    <input type="checkbox" name="programming-language-cb" id="js-cb"><label for="js-cb">JS</label>
+    <input type="checkbox" name="programming-language-cb" id="php-cb"><label for="php-cb">PHP</label>
+    <p>Вы знаете: <span id="task39-result"></span></p>
+
+    <!-- task40 -->
+    <p>40. Дан чекбокс. Дан инпут. Сделайте так, что если чекбокс отмечен - инпут видимый, если не отмечен - не видимый.</p>
+    <input type="checkbox" id="task40-cb"><input type="text" id="task40-input" placeholder="Видимый/невидимый">
+
+    <!-- task41 -->
+    <p>41. Даны чекбоксы. Под каждым чекбоксом размещен абзац. Сделайте так, что если чекбокс отмечен - соответствующий абзац видимый, а если не отмечен - не видимый.</p>
+    <div id="task41-parent">
+        <input type="checkbox" id="first-cb-41"><p id="first-cb-41-p" style="display: inline-block; opacity: 0;">Абзац видимый или невидимый</p><br>
+        <input type="checkbox" id="second-cb-41" checked><p id="second-cb-41-p" style="display: inline-block; opacity: 1;">Абзац видимый или невидимый</p><br>
+        <input type="checkbox" id="third-cb-41"><p id="third-cb-41-p" style="display: inline-block; opacity: 0;">Абзац видимый или невидимый</p><br>
+        <input type="checkbox" id="fourth-cb-41" checked><p id="fourth-cb-41-p" style="display: inline-block; opacity: 1;">Абзац видимый или невидимый</p>
+    </div>
+
+    <!-- task42 -->
+    <p>42. Дан инпут. Даны li. В инпут пишется номер. Сделайте так, чтобы по вводу числа, li с заданным номером покрасился в красный цвет.</p>
+    <input type="number" id="task42-input" placeholder="Введите номер li">
+    <ol id="task42-list">
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+        <li>li</li>
+    </ol>
+
+    <!-- task43 -->
+    <p>43. Дан абзац. Даны чекбоксы 'перечеркнуть', 'сделать жирным', 'сделать красным'. Если соответствующий чекбокс отмечен - заданное действие происходит с абзацем (становится красным, например). Если чекбоксу снять отметку - действие отменяется.</p>
+    <p id="task43result">Абзац</p>
+    <input type="checkbox" name="text-decor" id="line-through"><label for="line-through">Перечеркнуть</label>
+    <input type="checkbox" name="text-decor" id="bold"><label for="bold">Сделать жирным</label>
+    <input type="checkbox" name="text-decor" id="red"><label for="red">Сделать красным</label>
+
+    <!-- task44 -->
+    <p>44. Дан блок с кнопкой 'закрыть блок'. По нажатию на эту кнопку блок должен исчезнуть. Кнопка размещается внутри блока и должна исчезнуть вместе с ним. Блоков может быть любое количество, каждый из них закрывает своя кнопка.</p>
+    <div class="block-to-hide">
+        По нажатию на эту кнопку
+        <br>
+        <button>Закрыть</button>
+    </div>
+    <div class="block-to-hide">
+        <br>
+        По нажатию на эту кнопку
+        <br>
+        <button>Закрыть</button>
+    </div>
+    <div class="block-to-hide">
+        <br>
+        По нажатию на эту кнопку
+        <br>
+        <button>Закрыть</button>
+    </div>
+
+    <!-- task45 -->
+    <p>45. В инпут через запятую вводятся страны. По нажатию на кнопку сделайте так, чтобы эти страны записались в ul под инпутом (каждая страна отдельный li).</p>
+    <input type="text" id="task45-input" placeholder="Страны через запятую">
+    <button id="task45-btn">Создать список стран</button>
+    <ul id="task45-list" style="display: none;">
+
+    </ul>
+
+    <!-- task46 -->
+    <p>46. В инпут вводится страна и нажимается Enter. По нажатию на Enter сделайте так, чтобы введенные страны записывались в абзац под инпутом через запятую. То есть по каждому нажатию Enter в абзац будут добавляться все новые и новые страны.</p>
+    <input type="text" id="task46-input" placeholder="Введите страну и нажмите Enter">
+    <p id="task46-result"></p>
+
+    <!-- task47 -->
+    <!-- <p>47. На странице есть дивы. В них есть текст. Обойдите все дивы и обрежьте тот текст, который в них стоит так, чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста</p>
+    <div class="div-to-cut">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis numquam sequi sunt. Aspernatur officiis pariatur repellat.</div>
+    <div class="div-to-cut">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis numquam sequi sunt. Aspernatur officiis pariatur repellat.</div>
+    <div class="div-to-cut">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis numquam sequi sunt. Aspernatur officiis pariatur repellat.</div>
+    <button id="task47-btn">Обрезать</button> -->
+
     <script src="script.js"></script>
 </body>
 </html>
