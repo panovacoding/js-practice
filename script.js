@@ -688,20 +688,143 @@ task46input.addEventListener('keydown', (e) => {
 });
 
 // task47
-// const divsToCut = [...document.querySelectorAll('.div-to-cut')];
-// const task47btn = document.getElementById('task47-btn');
+const divsToCut = [...document.querySelectorAll('.div-to-cut')];
+const task47btn = document.getElementById('task47-btn');
 
-// task47btn.addEventListener('click', () => {
-//     divsToCut.forEach(div => {
-//         let starterString = div.textContent;
-//         if(div.textContent.length <= 11) {
-//             div.textContent = starterString;
-//             task47btn.textContent = 'Обрезать'
-//         } else {
-//             let cuttedString = starterString.slice(0, 10);
-//             div.textContent = cuttedString + '...';
-//             task47btn.textContent = 'Показать'
-//         }
-//         console.log(starterString)
-//     })
-// });
+let starterStrings = [];
+
+for (let i = 0; i < divsToCut.length; i++) {
+    starterStrings.push(String(divsToCut[i].textContent));
+}
+
+task47btn.addEventListener('click', () => {
+    divsToCut.forEach(div => {
+        if(div.textContent.length <= 13) {
+            div.textContent = starterStrings[divsToCut.indexOf(div)];
+            task47btn.textContent = 'Обрезать'
+        } else {
+            let cuttedString = div.textContent.slice(0, 10);
+            div.textContent = cuttedString + '...';
+            task47btn.textContent = 'Показать'
+        }
+    })
+});
+
+// task48
+const table48 = document.getElementById('table48');
+const table48cells = [...table48.querySelectorAll('td')];
+const task48btn = document.getElementById('btn48');
+
+let cells48values = [];
+
+table48cells.forEach(cell => {
+    cells48values.push(cell.textContent);
+})
+
+cells48values.sort((a, b) => a - b);
+
+task48btn.addEventListener('click', () => {
+    let maxIntCell = table48cells.find(cell => cell.textContent === cells48values[cells48values.length - 1]);
+    maxIntCell.style.color = 'white';
+    maxIntCell.style.background = 'red';
+});
+
+// task49
+const table49 = document.getElementById('table49');
+const table49cells = [...table49.querySelectorAll('td')];
+const task49btn = document.getElementById('btn49');
+const task49result = document.getElementById('task49result')
+
+let cells49values = [];
+
+table49cells.forEach(cell => {
+    cells49values.push(cell.textContent);
+})
+
+cells49values.sort((a, b) => a - b);
+
+task49btn.addEventListener('click', () => {
+    const valuesToString = cells49values.join(', ');
+    task49result.value = valuesToString
+});
+
+// task50
+const table50 = document.getElementById('table50');
+const table50tr = [...table50.querySelectorAll('tr')];
+const btn50 = document.getElementById('btn50');
+
+let firstColumn = [];
+let secondColumn = [];
+let thirdColumn = []
+
+btn50.addEventListener('click', () => {
+    table50tr.forEach(tr => {
+        let tdValue = [...tr.children];
+        firstColumn.push(Number(tdValue[0].textContent));
+        secondColumn.push(Number(tdValue[1].textContent));
+        thirdColumn.push(Number(tdValue[2].textContent));
+    })
+    
+    let firstSum = firstColumn.reduce((a, b) => a + b, 0);
+    let secondSum = secondColumn.reduce((a, b) => a + b, 0);
+    let thirdSum = thirdColumn.reduce((a, b) => a + b, 0);
+    
+    table50.insertAdjacentHTML('beforeend', `
+        <tr>
+            <td>${firstSum}</td>
+            <td>${secondSum}</td>
+            <td>${thirdSum}</td>
+        </tr>
+    `);
+    return;
+}, { once: true});
+
+// task51
+const table51 = document.getElementById('table51');
+const table51cells = [...table51.querySelectorAll('td')];
+const btn51 = document.getElementById('btn51');
+const result51 = document.getElementById('result51');
+const reset51 = document.getElementById('btn51reset');
+
+table51cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+        cell.classList.toggle('red-td');
+    })
+})
+
+btn51.addEventListener('click', () => {
+    let activeCellsValues = [];
+    let activeCells = table51cells.filter(cell => cell.classList.contains('red-td'));
+    activeCells.forEach(cell => activeCellsValues.push(Number(cell.textContent)));
+    result51.textContent = activeCellsValues.reduce((a, b) => a + b, 0);
+});
+
+reset51.addEventListener('click', () => {
+    table51cells.forEach(value => value.classList.remove('red-td'));
+    result51.textContent = '';
+});
+
+// task52
+const table52 = document.getElementById('table52');
+const table52cells = [...table52.querySelectorAll('td')];
+
+for (let i = 0; i < table52cells.length; i++) {
+    let currentEl = table52cells[i];
+    let currentElValue = currentEl.textContent;
+    currentEl.addEventListener('click', () => {
+        currentEl.innerText = '';
+        let newTdContent = document.createElement('div');
+        let inputTd = document.createElement('input');
+        let btnTd = document.createElement('button');
+        btnTd.textContent = 'Сохранить';
+
+        newTdContent.append(inputTd, btnTd);
+        currentEl.append(newTdContent);
+
+        let input = currentEl.querySelector('input');
+        input.focus();
+        input.value = currentElValue;
+
+    })
+
+}

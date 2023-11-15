@@ -346,11 +346,136 @@
     <p id="task46-result"></p>
 
     <!-- task47 -->
-    <!-- <p>47. На странице есть дивы. В них есть текст. Обойдите все дивы и обрежьте тот текст, который в них стоит так, чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста</p>
+    <p>47. На странице есть дивы. В них есть текст. Обойдите все дивы и обрежьте тот текст, который в них стоит так, чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста</p>
     <div class="div-to-cut">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis numquam sequi sunt. Aspernatur officiis pariatur repellat.</div>
     <div class="div-to-cut">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis numquam sequi sunt. Aspernatur officiis pariatur repellat.</div>
     <div class="div-to-cut">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis numquam sequi sunt. Aspernatur officiis pariatur repellat.</div>
-    <button id="task47-btn">Обрезать</button> -->
+    <button id="task47-btn">Обрезать</button>
+
+    <!-- task48 -->
+    <p>48. Дана таблица с числами. По нажатию на кнопку найдите ячейку, в которой хранится максимальное число, и сделайте ее фон красным.</p>
+    <table id="table48">
+        <tbody>
+            <tr>
+                <td>25</td>
+                <td>11</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>13</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>23</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="btn48">Жми</button>
+
+    <!-- task49 -->
+    <p>49. Дана таблица с числами. По нажатию на кнопку выведите в инпут через запятую значения всех ячеек по возрастанию.
+    </p>
+    <table id="table49">
+        <tbody>
+            <tr>
+                <td>25</td>
+                <td>11</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>13</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>23</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="btn49">Жми</button>
+    <input type="text" id="task49result">
+
+    <!-- task50 -->
+    <p>50. Дана таблица с числами. По нажатию на кнопку в последний ряд таблицы в каждую ячейку запишите сумму чисел в столбце таблицы, расположенном над определенной ячейкой.</p>
+    <table id="table50">
+        <tbody>
+            <tr>
+                <td>25</td>
+                <td>11</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>13</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>23</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="btn50">Жми</button>
+
+    <!-- task51 -->
+    <p>51. Дана таблица с числами. По нажатию на ячейку она активируется и становится красного цвета. Активировать можно много ячеек. Под таблицей кнопка. По нажатию по этой кнопке в абзац ниже выведите сумма активированных ячеек. Реализуйте кнопку 'сбросить активированные ячейки'.</p>
+    <table id="table51">
+        <tbody>
+            <tr>
+                <td>25</td>
+                <td>11</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>13</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>23</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="btn51">Получить сумму</button>
+    <p>Сумма - <span id="result51"></span></p>
+    <button id="btn51reset">Очистить</button>
+
+    <style>
+        .red-td {
+            background: red;
+            color: white;
+        }
+    </style>
+
+    <!-- task52 -->
+    <p>52. Дана таблица. По нажатию на ячейку в ней появляется инпут с содержимым этой ячейки и кнопка сохранить. Можно поредактировать текст в инпуте, сохранить - и текст ячейки поменяется.</p>
+    <table id="table52">
+        <tbody>
+            <tr>
+                <td>25</td>
+                <td>11</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>54</td>
+                <td>13</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>23</td>
+                <td>6</td>
+            </tr>
+        </tbody>
+    </table>
 
     <script src="script.js"></script>
 </body>
