@@ -477,6 +477,26 @@
         </tbody>
     </table>
 
+    <!-- task53 -->
+    <p>53. Реализуйте раскрывающийся список. По умолчанию есть список стран (ul), по нажатию на страну внутри li со страной появляется список городов.</p>
+    <ul id="countryList">
+        <li style="cursor: pointer;">Россия
+        </li>
+        <li style="cursor: pointer;">Беларусь
+        </li>
+    </ul>
+
+    <!-- task54 -->
+    <p>54. Даны два селекта. В первом находятся страны, во втором - города. Сделайте так, чтобы когда выбирается определенная страна - в другом селекте появлялись города этой страны. В абзац ниже пишите выбранную страну и город через запятую.</p>
+    <select id="countrySelect">
+        <option selected hidden>Выберите страну</option>
+        <option>Австралия</option>
+        <option>Япония</option>
+        <option>ЮАР</option>
+    </select>
+    <select id="citySelect"></select>
+    <p id="task54"></p>
+
     <script src="script.js"></script>
 </body>
 </html>

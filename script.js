@@ -103,6 +103,7 @@ let inputTaskSeven = document.getElementById('input-task-seven');
 let resultTaskSeven = document.getElementById('result-task-seven');
 
 inputTaskSeven.addEventListener('blur', () => {
+    if(inputTaskSeven.value === '') return;
     let splittedValue = (inputTaskSeven.value).split(' ');
     let splittedValueLength = splittedValue.length;
     resultTaskSeven.innerText = splittedValueLength;
@@ -812,19 +813,148 @@ for (let i = 0; i < table52cells.length; i++) {
     let currentEl = table52cells[i];
     let currentElValue = currentEl.textContent;
     currentEl.addEventListener('click', () => {
-        currentEl.innerText = '';
-        let newTdContent = document.createElement('div');
-        let inputTd = document.createElement('input');
-        let btnTd = document.createElement('button');
-        btnTd.textContent = 'Сохранить';
-
-        newTdContent.append(inputTd, btnTd);
-        currentEl.append(newTdContent);
-
-        let input = currentEl.querySelector('input');
-        input.focus();
-        input.value = currentElValue;
-
+        insertInput(currentEl, currentElValue);
     })
 
 }
+
+function insertInput(el, elValue) {
+    el.innerText = '';
+    let newTdContent = document.createElement('div');
+    let inputTd = document.createElement('input');
+    let btnTd = document.createElement('button');
+    btnTd.textContent = 'Сохранить';
+    btnTd.style.position = 'relative';
+    btnTd.style.zIndex = '2';
+
+    newTdContent.append(inputTd, btnTd);
+    el.append(newTdContent);
+
+    let input = el.querySelector('input');
+    input.focus();
+    input.value = elValue;
+
+    input.addEventListener('change', () => {
+        el.innerHTML = '';
+        el.innerText = input.value
+    })
+
+    input.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter') {
+            el.innerHTML = '';
+            el.innerText = input.value
+        }
+    })
+
+    input.addEventListener('blur', () => {
+        el.innerHTML = '';
+        el.innerText = input.value
+    })
+};
+
+// task53
+const countryList = document.getElementById('countryList');
+const listItems = [...countryList.children];
+
+const data = [
+    {
+        country: 'Россия',
+        cities: [
+            'Москва',
+            'Калининград',
+            'Владивосток'
+        ],
+    },
+    {
+        country: 'Беларусь',
+        cities: [
+            'Минск',
+            'Витебск',
+            'Гомель'
+        ],
+    },
+];
+
+listItems.forEach(item => {
+    item.addEventListener('click', () => {
+        data.map(({ country, cities }) => {
+            if(item.innerText === country) {
+                let citiesList = document.createElement('ul');
+                cities.map(city => {
+                    let newListItem = document.createElement('li');
+                    newListItem.innerText = city;
+                   citiesList.append(newListItem);
+                })
+                item.append(citiesList);
+
+                item.addEventListener('click', () => {
+                    citiesList.remove();
+                })
+            }
+        })
+    })
+});
+
+// task54
+const countrySelect = document.getElementById('countrySelect');
+const citiesSelect = document.getElementById('citySelect');
+const result54 = document.getElementById('task54');
+const data54 = [
+    {
+        country: 'Австралия',
+        cities: [
+            'Мельбурн',
+            'Сидней', 
+            'Аделаида',
+            'Брисбен',
+            'Хобарт',
+        ]
+    },
+    {
+        country: 'Япония',
+        cities: [
+            'Токио',
+            'Киото', 
+            'Осака',
+            'Иокогама',
+        ]
+    },
+    {
+        country: 'ЮАР',
+        cities: [
+            'Кейптаун',
+            'Йоханесбург',
+        ]
+    },
+];
+
+countrySelect.addEventListener('change', () => {
+    citiesSelect.innerHTML = '';
+    const countryOptions = countrySelect.querySelectorAll('option');
+    countryOptions.forEach(option => {
+        if(!option.selected) return;
+        data54.map(({ country, cities }) => {
+            if(option.innerText === country) {
+                cities.map((city) => {
+                    let newCityOption = document.createElement('option');
+                    newCityOption.innerText = city;
+                    citiesSelect.append(newCityOption)
+                })
+
+                result54.textContent = option.innerText + ', ' + citiesSelect.children[0].innerText;
+
+                citiesSelect.addEventListener('change', () => {
+                    let cityOptions = citiesSelect.querySelectorAll('option');
+                    cityOptions.forEach(cityOption => {
+                        if(cityOption.selected) {
+                            result54.textContent = option.innerText + ', ' + cityOption.innerText;
+                        }
+                    }) 
+                })
+
+            }
+        })
+        
+    })
+    
+});
